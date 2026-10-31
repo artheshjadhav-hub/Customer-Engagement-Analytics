@@ -32,15 +32,15 @@ c3.metric("Active Customers", int(df["IsActiveMember"].sum()))
 st.header("Engagement vs Churn")
 
 engagement_data = (
-    df.groupby("Engagement_Status")["Exited"]
+    df.groupby("EngagementLevel")["Exited"]
     .mean().reset_index()
 )
 
 fig = px.bar(
     engagement_data,
-    x="Engagement_Status",
+    x="EngagementLevel",
     y="Exited",
-    color="Engagement_Status"
+    color="EngagementLevel"
 )
 
 st.plotly_chart(fig, use_container_width=True)
