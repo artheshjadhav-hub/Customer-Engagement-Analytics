@@ -18,6 +18,7 @@ def load_data():
     )
 
 df = load_data()
+st.write("Available Columns:", df.columns.tolist())
 
 st.title("Customer Engagement & Product Utilization Analytics")
 
